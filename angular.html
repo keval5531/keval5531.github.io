@@ -3,10 +3,18 @@
 <script>
 var app = angular.module('myapp', []);
 app.controller('myController', function($scope) {
-    $scope.toShow = "y";
+    $scope.limit = 5;
+    $scope.reached = 20;
+    $scope.check = function () {
+    	if ($scope.reached >= $scope.limit) {
+    		alert("Sorry, limit reached.");
+    	} else {
+    		alert("Success!");
+    	}
+    };
 });
 </script>
 <body ng-app="myapp" ng-controller="myController">
-    <button ng-if="toShow =='y'">I am a button</button>
+  <button ng-click = "check()">I am a button</button>
 </body>
 </html>
