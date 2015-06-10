@@ -3,10 +3,10 @@
 <script>
 var app = angular.module('myapp', []);
 app.controller('myController', function($scope) {
-    $scope.isDisabled = true;
+    $scope.toShow = "y";
 });
 </script>
 <body ng-app="myapp" ng-controller="myController">
-    <button ng-disabled={{isDisabled}}>I am a button</button>
+    <button ng-if="toShow =='y'">I am a button</button>
 </body>
 </html>
