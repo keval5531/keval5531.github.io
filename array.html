@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript">
+    function call() {
+        var x = $("#nums").val().split(',').map(Number);
+        var h, l, hf, lf;
+        h = l = hf = lf = j = 0;
+        if (x[j] > x[1]) {
+            lf = hf = 1;
+            j = 1;
+        } 
+        for (var i = j + 1; i <= x.length; i++) {
+            if (x[i] - x[j] > h) {
+                h = x[i] - x[j];
+                hf = i;
+            } else if (x[i] - x[j] < l) {
+                l = x[i] - x[j];
+                lf = i;
+            }
+        };
+        if (x[hf] - x[j] > x[hf] - x[lf]) {
+            alert(x[j] + " and " + x[hf]);
+        } else
+            alert(x[lf] + " and " + x[hf]);
+    }
+    </script>
+</head>
+<body>
+    <input placeholder="input comma separted values only" id="nums" style="width: 229px;">
+    <button onclick="call()">Get dem numbers</button>
+</body>
+</html>
