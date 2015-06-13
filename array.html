@@ -4,17 +4,18 @@
     <script type="text/javascript">
     function call() {
         var x = $("#nums").val().split(',').map(Number);
-        var h, l, hf, lf;
+        var h, l, hf, lf,s;
         h = l = hf = lf = j = 0;
         if (x[j] > x[1]) {
             lf = hf = 1;
             j = 1;
         } 
         for (var i = j + 1; i <= x.length; i++) {
+    
             if (x[i] - x[j] > h) {
                 h = x[i] - x[j];
                 hf = i;
-            } else if (x[i] - x[j] < l) {
+            } else if (x[i] - x[j] < l && hf > i) {
                 l = x[i] - x[j];
                 lf = i;
             }
