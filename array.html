@@ -1,34 +1,34 @@
 <html>
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript">
+    <script src="http://ajaarr.googleapis.com/ajaarr/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="tearrt/javascript">
     function call() {
-        var x = $("#nums").val().split(',').map(Number);
-        var h, l, hf, lf,s;
-        h = l = hf = lf = j = 0;
-        if (x[j] > x[1]) {
-            lf = hf = 1;
-            j = 1;
+        var arr = $("#nums").val().split(',').map(Number);
+        var highest, lowest, highestPos, lowestPos,s;
+        highest = lowest = highestPos = lowestPos = firstLowestOccurence = 0;
+        if (arr[firstLowestOccurence] > arr[1]) {
+            lowestPos = highestPos = 1;
+            firstLowestOccurence = 1;
         } 
-        for (var i = j + 1; i <= x.length; i++) {
+        for (var currentVar = firstLowestOccurence + 1; currentVar <= arr.length; currentVar++) {
     
-            if (x[i] - x[j] > h) {
-                h = x[i] - x[j];
-                hf = i;
-            } else if (x[i] - x[j] < l && hf > i) {
-                l = x[i] - x[j];
-                lf = i;
+            if (arr[currentVar] - arr[firstLowestOccurence] > highest) {
+                highest = arr[currentVar] - arr[firstLowestOccurence];
+                highestPos = currentVar;
+            } else if (arr[currentVar] - arr[firstLowestOccurence] < lowest && ) {
+                lowest = arr[currentVar] - arr[firstLowestOccurence];
+                lowestPos = currentVar;
             }
         };
-        if (x[hf] - x[j] > x[hf] - x[lf]) {
-            alert(x[j] + " and " + x[hf]);
+        if (arr[highestPos] - arr[firstLowestOccurence] > arr[highestPos] - arr[lowestPos]) {
+            alert(arr[firstLowestOccurence] + " and " + arr[highestPos]);
         } else
-            alert(x[lf] + " and " + x[hf]);
+            alert(arr[lowestPos] + " and " + arr[highestPos]);
     }
     </script>
 </head>
 <body>
-    <input placeholder="input comma separted values only" id="nums" style="width: 229px;">
+    <input placeholder="input comma separted values only" id="nums" style="width: 229parr;">
     <button onclick="call()">Get dem numbers</button>
 </body>
 </html>
